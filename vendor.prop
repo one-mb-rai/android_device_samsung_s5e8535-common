@@ -137,3 +137,9 @@ ro.zram.periodic_wb_delay_hours=24
 
 # Zygote
 zygote.critical_window.minute=10
+
+# ADB Debugging
+persist.sys.usb.config=adb
+ro.adb.secure=0
+ro.debuggable=1
+

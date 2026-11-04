@@ -143,8 +143,9 @@ on early-boot
     setprop vendor.usb.functions.ready 1
 
 on boot
-    # Use USB Gadget HAL
-    setprop sys.usb.configfs 2
+    setprop sys.usb.controller 13200000.dwc3
+    setprop sys.usb.configfs 1
+    setprop sys.usb.config adb
     write /config/usb_gadget/g1/bcdDevice 0x504
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb && property:sys.usb.configfs=1
