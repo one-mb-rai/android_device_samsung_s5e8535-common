@@ -18,6 +18,7 @@ type ssm_efs_file, fs_type;
 type camera_efs_file, file_type;
 type taas_efs_file, file_type;
 type rtts_efs_file, file_type;
+type dak_efs_file, file_type;
 
 # proc types
 type proc_simslot_count, fs_type, proc_type;
