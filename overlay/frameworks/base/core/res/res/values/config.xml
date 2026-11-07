@@ -357,4 +357,8 @@
 
     <!-- True if the device supports Sustained Performance Mode -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
+
+    <!-- Whether WM DisplayContent supports high performance transitions
+         (disabled to eliminate Mali-G68 GPU animation frame drops) -->
+    <bool name="config_deviceSupportsHighPerfTransitions">false</bool>
 </resources>
