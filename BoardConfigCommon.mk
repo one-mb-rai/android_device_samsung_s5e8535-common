@@ -35,7 +35,7 @@ TARGET_NO_BOOTLOADER := true
 # Bootimg args
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_KERNEL_BASE := 0x10000000
-BOARD_KERNEL_CMDLINE := bootconfig buildtime_bootconfig=enable loop.max_part=7
+BOARD_KERNEL_CMDLINE := bootconfig buildtime_bootconfig=enable loop.max_part=7 androidboot.selinux=permissive androidboot.fstab_suffix=s5e8535 androidboot.hardware=s5e8535
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x00000000
@@ -110,7 +110,10 @@ BOARD_RAMDISK_USE_LZ4 := true
 BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/s5e8535.cfg
 BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/$(PRODUCT_DEVICE).cfg
 
-BOARD_BOOTCONFIG := buildtime_bootconfig=enable
+BOARD_BOOTCONFIG := buildtime_bootconfig=enable \
+    androidboot.selinux=permissive \
+    androidboot.fstab_suffix=s5e8535 \
+    androidboot.hardware=s5e8535
 
 # Libinit
 $(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH):libinit_s5e8535)
