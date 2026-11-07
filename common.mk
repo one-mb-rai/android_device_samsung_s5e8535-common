@@ -237,6 +237,9 @@ endif
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
 PRODUCT_PACKAGES += \
+    FrameworkResOverlayCommon \
+    Launcher3QuickstepOverlayCommon \
+    SystemUIOverlayCommon \
     WifiOverlay \
     NcmTetheringOverlay
 

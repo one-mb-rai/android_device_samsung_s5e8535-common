@@ -59,6 +59,14 @@ on init
     chown system system /dev/cluster0_freq_max
     chown system system /dev/cluster1_freq_max
     chown system system /dev/cluster2_freq_max
+    chmod 0664 /dev/cluster0_freq_min
+    chmod 0664 /dev/cluster1_freq_min
+    chmod 0664 /dev/cluster0_freq_max
+    chmod 0664 /dev/cluster1_freq_max
+    chown system system /sys/class/power_supply/battery/lcd
+    chown system system /sys/kernel/mm/vmscan/am_app_launch
+    chmod 0664 /sys/class/power_supply/battery/lcd
+    chmod 0664 /sys/kernel/mm/vmscan/am_app_launch
     chown system system /dev/cpu_online_min
     chown system system /dev/cpu_online_max
     chown system system /dev/gpu_freq_min
@@ -1840,6 +1848,7 @@ service insmod_sh_common /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.${ro
     disabled
     oneshot
 
-# SSWAP
+# SSWAP & ZRAM
 on boot
     write /proc/sys/vm/swappiness 160
+    write /sys/module/zram/parameters/zram_balance_ratio 30
