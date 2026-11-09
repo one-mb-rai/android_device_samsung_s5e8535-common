@@ -31,6 +31,8 @@ fs_mgr.overlayfs.prefer_cache_backing_storage=true
 
 ## Camera
 ro.camera.disableJpegR=true
+persist.vendor.camera.HAL3.enabled=1
+persist.camera.HAL3.enabled=1
 
 ## Codecs
 debug.stagefright.c2inputsurface=-1

@@ -22,4 +22,13 @@
         <item>restart_fastboot</item>
         <item>restart_download</item>
      </string-array>
+
+    <!-- Whether charging control should be enabled by default -->
+    <bool name="config_chargingControlEnabled">true</bool>
+
+    <!-- Default charging control mode: 1-auto, 2-custom, 3-limit -->
+    <integer name="config_defaultChargingControlMode">3</integer>
+
+    <!-- Default charging limit -->
+    <integer name="config_defaultChargingControlLimit">80</integer>
 </resources>
