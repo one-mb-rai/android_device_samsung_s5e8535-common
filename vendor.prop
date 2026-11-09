@@ -150,3 +150,9 @@ ro.zram.periodic_wb_delay_hours=24
 
 # Zygote
 zygote.critical_window.minute=10
+
+## Security & Privacy Hardening
+kernel.yama.ptrace_scope=2
+kernel.kptr_restrict=2
+vm.unprivileged_userfaultfd=0
+persist.security.usb_data_restricted=1

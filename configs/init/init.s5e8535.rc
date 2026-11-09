@@ -792,6 +792,13 @@ on early-boot
     chmod 0222 /sys/kernel/tracing/trace_marker
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
 
+    # Security & Kernel Hardening (YAMA, Kptr, BPF, UAF)
+    write /proc/sys/kernel/kptr_restrict 2
+    write /proc/sys/kernel/dmesg_restrict 1
+    write /proc/sys/kernel/yama/ptrace_scope 2
+    write /proc/sys/kernel/unprivileged_bpf_disabled 2
+    write /proc/sys/vm/unprivileged_userfaultfd 0
+
     # Update dm-verity state and set partition.*.verified properties
     verity_update_state
 
@@ -821,6 +828,13 @@ on boot
     chmod 0755 /sys/kernel/debug/tracing
     chmod 0222 /sys/kernel/tracing/trace_marker
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
+
+    # Security & Kernel Hardening (YAMA, Kptr, BPF, UAF)
+    write /proc/sys/kernel/kptr_restrict 2
+    write /proc/sys/kernel/dmesg_restrict 1
+    write /proc/sys/kernel/yama/ptrace_scope 2
+    write /proc/sys/kernel/unprivileged_bpf_disabled 2
+    write /proc/sys/vm/unprivileged_userfaultfd 0
 
     setprop wifi.interface wlan0
 
