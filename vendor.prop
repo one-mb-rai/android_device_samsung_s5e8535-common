@@ -1,8 +1,13 @@
-## AAudio
+## AAudio & Hi-Res Offload
 aaudio.mmap_policy=2
 aaudio.mmap_exclusive_policy=2
 aaudio.hw_burst_min_usec=2000
 audio.offload.min.duration.secs=30
+audio.offload.video=true
+audio.offload.pcm.16bit.enable=true
+audio.offload.pcm.24bit.enable=true
+audio.deep_buffer.media=true
+af.fast_track_multiplier=1
 ro.audio.spatializer_enabled=true
 
 ## Set supported Bluetooth profiles to enabled
@@ -37,6 +42,8 @@ media.c2.hal.selection=aidl
 debug.c2.use_dmabufheaps=1
 debug.stagefright.ccodec_delayed_params=1
 ro.vendor.gpu.dataspace=1
+media.stagefright.thumbnail.prefer_hw_codecs=true
+ro.media.recorder-max-base-layer-fps=60
 
 ## Dalvik
 dalvik.vm.dex2oat64.enabled=true
