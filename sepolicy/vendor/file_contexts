@@ -11,6 +11,10 @@
 /sys/devices/platform/panel@[0-9]/lcd/panel(/.*)?           u:object_r:sysfs_lcd_writable:s0
 /sys/devices/[0-9]+\.dsim/lcd/panel(/.*)?                   u:object_r:sysfs_lcd_writable:s0
 
+# Touchscreen
+/sys/class/sec/tsp(/.*)?                                    u:object_r:sysfs_touchscreen_writable:s0
+/sys/devices/virtual/sec/tsp(/.*)?                          u:object_r:sysfs_touchscreen_writable:s0
+
 # Battery
 /sys/class/power_supply(/.*)?	                            u:object_r:sysfs_battery:s0
 /sys/class/power_supply/battery(/.*)?	                    u:object_r:sysfs_battery:s0

@@ -123,12 +123,19 @@ ro.netflix.bsp_rev=EXYNOS1330-36497-1
 ## Power HAL
 vendor.powerhal.disp.idle_support=false
 
-## RIL
+## RIL & Telephony (SA 5G & VoNR)
 ro.radio.noril=no
 ro.carrier=unknown
 ro.telephony.default_cdma_sub=0
 ro.vendor.epdg.support=true
-ro.vendor.sec.radio.def_network=9
+persist.radio.is_vonr_enabled_0=true
+persist.radio.is_vonr_enabled_1=true
+persist.vendor.radio.vonr_enabled=1
+persist.ril.supportNrModefromCp=1
+ril.supportSA=1
+persist.radio.support.dualrat=true
+ro.vendor.sec.radio.def_network=26,26
+ro.telephony.default_network=26,26
 
 ## Samsung specific
 ro.product_ship=true
