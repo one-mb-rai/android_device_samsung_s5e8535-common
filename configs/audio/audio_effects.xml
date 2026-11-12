@@ -34,7 +34,6 @@
         <library name="playbackrecorder" path="libplaybackrecorder.so"/>
         <library name="dap" path="libswdap.so"/>
         <library name="spatializer" path="libswspatializer.so"/>
-        <library name="jdsp" path="libjamesdsp.so"/>
     </libraries>
 
     <!-- list of effects to load.
@@ -99,7 +98,6 @@
         </effectProxy>
         <effect name="volumemonitor_hw" library="offload" uuid="052a63b0-f95a-11e9-8f0b-362b9e155667"/>
         <effect name="spatializer" library="spatializer" uuid="ccd4cf09-a79d-46c2-9aae-06a1698d6c8f"/>
-        <effect name="jamesdsp" library="jdsp" uuid="f27317f4-c984-4de6-9a90-545759495bf2"/>
     </effects>
 
     <!-- Audio pre processor configurations.
@@ -160,15 +158,12 @@
     <postprocess>
         <stream type="music">
             <apply effect="sa3d"/>
-            <apply effect="jamesdsp"/>
         </stream>
         <stream type="ring">
             <apply effect="sa3d"/>
-            <apply effect="jamesdsp"/>
         </stream>
         <stream type="alarm">
             <apply effect="sa3d"/>
-            <apply effect="jamesdsp"/>
         </stream>
     </postprocess>
 
