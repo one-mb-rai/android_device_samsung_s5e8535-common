@@ -48,10 +48,6 @@ genfscon sysfs /devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_m
 genfscon sysfs /devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_max        u:object_r:sysfs_power_writable:s0
 genfscon sysfs /kernel/ems/emstune/sched_boost                                                  u:object_r:sysfs_power_writable:s0
 
-# TSP (Touchscreen Double Tap to Wake)
-genfscon sysfs /class/sec/tsp/cmd                                                               u:object_r:sysfs_touchscreen_writable:s0
-genfscon sysfs /devices/virtual/sec/tsp/cmd                                                     u:object_r:sysfs_touchscreen_writable:s0
-
 # Firmware
 genfscon sysfs /firmware/devicetree/base/sound/mixer-paths                                                     u:object_r:sysfs_audio:s0
 
