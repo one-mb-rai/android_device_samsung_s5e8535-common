@@ -8,5 +8,5 @@ allow hal_power_default sysfs_battery:lnk_file read;
 # TSP / Touchscreen DT2W
 allow hal_power_default sysfs_touchscreen_writable:file rw_file_perms;
 allow hal_power_default sysfs_sec_touchscreen:dir search;
-allow hal_power_default sysfs_sec_touchscreen:file rw_file_perms;
+allow hal_power_default sysfs_sec_touchscreen:file r_file_perms;
 allow hal_power_default sysfs_sec_touchscreen:lnk_file r_file_perms;
