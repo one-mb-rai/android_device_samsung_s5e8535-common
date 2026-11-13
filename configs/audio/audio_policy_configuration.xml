@@ -28,11 +28,9 @@
                 <item>Telephony Tx</item>
                 <item>Built-In Mic</item>
                 <item>Built-In Back Mic</item>
-                <item>Built-In 2 Mic</item>
                 <item>Telephony Rx</item>
-                <item>Voice Call Mic</item>
             </attachedDevices>
-            <defaultOutputDevice>Speaker</defaultOutputDevice>
+            <defaultOutputDevice>Earpiece</defaultOutputDevice>
             <mixPorts>
                 <!-- Playback(Output) Streams -->
                 <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_PRIMARY">
