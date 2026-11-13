@@ -25,7 +25,11 @@
             <attachedDevices>
                 <item>Speaker</item>
                 <item>Earpiece</item>
+                <item>Telephony Tx</item>
                 <item>Built-In Mic</item>
+                <item>Built-In Back Mic</item>
+                <item>Built-In 2 Mic</item>
+                <item>Telephony Rx</item>
                 <item>Voice Call Mic</item>
             </attachedDevices>
             <defaultOutputDevice>Speaker</defaultOutputDevice>
@@ -84,6 +88,11 @@
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
                 </mixPort>
 
+                <mixPort name="incall_music_uplink" role="source"
+                        flags="AUDIO_OUTPUT_FLAG_INCALL_MUSIC">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000 16000 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
                 <!-- Capture(Input) Streams -->
                 <mixPort name="primary input" role="sink">
                     <profile name="primary_in" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -180,11 +189,31 @@
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
                 </devicePort>
 
+                <devicePort tagName="Built-In Back Mic" type="AUDIO_DEVICE_IN_BACK_MIC" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
+                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
+                </devicePort>
+
+                <devicePort tagName="Built-In 2 Mic" type="AUDIO_DEVICE_IN_2MIC" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
+                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
+                </devicePort>
+
+                <devicePort tagName="Telephony Rx" type="AUDIO_DEVICE_IN_TELEPHONY_RX" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
+                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_IN_VOICE_UPLINK AUDIO_CHANNEL_IN_VOICE_DNLINK"/>
+                </devicePort>
+
                 <!-- USB Devices -->
                 <devicePort tagName="USB Device Out" type="AUDIO_DEVICE_OUT_USB_DEVICE" role="sink"/>
                 <devicePort tagName="USB Headset Out" type="AUDIO_DEVICE_OUT_USB_HEADSET" role="sink"/>
                 <devicePort tagName="USB Device In" type="AUDIO_DEVICE_IN_USB_DEVICE" role="source"/>
                 <devicePort tagName="USB Headset In" type="AUDIO_DEVICE_IN_USB_HEADSET" role="source"/>
+
+                <devicePort tagName="Telephony Tx" type="AUDIO_DEVICE_OUT_TELEPHONY_TX" role="sink"/>
 
             </devicePorts>
 
@@ -214,8 +243,11 @@
                 <route type="mix" sink="HDMI"
                        sources="hdmi"/>
 
+                <route type="mix" sink="Telephony Tx"
+                       sources="incall_music_uplink"/>
+
                 <route type="mix" sink="primary input"
-                       sources="Built-In Mic,Wired Headset Mic,BT SCO Headset Mic,FM Tuner,Aux Device In,USB Device In,USB Headset In,Voice Call Mic"/>
+                       sources="Built-In Mic,Built-In Back Mic,Built-In 2 Mic,Wired Headset Mic,BT SCO Headset Mic,FM Tuner,Aux Device In,USB Device In,USB Headset In,Voice Call Mic,Telephony Rx"/>
                 <route type="mix" sink="mmap_no_irq_in"
                        sources="Built-In Mic,Wired Headset Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" />
