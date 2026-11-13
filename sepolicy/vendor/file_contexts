@@ -12,14 +12,22 @@
 /sys/devices/[0-9]+\.dsim/lcd/panel(/.*)?                   u:object_r:sysfs_lcd_writable:s0
 
 # Touchscreen
-/sys/class/sec/tsp(/.*)?                                    u:object_r:sysfs_touchscreen_writable:s0
-/sys/devices/virtual/sec/tsp(/.*)?                          u:object_r:sysfs_touchscreen_writable:s0
+/sys/devices/virtual/sec/tsp(/.*)?                          u:object_r:sysfs_sec_touchscreen:s0
+/sys/devices/virtual/sec/tsp/cmd                            u:object_r:sysfs_touchscreen_writable:s0
+/sys/devices/virtual/sec/tsp/enabled                        u:object_r:sysfs_touchscreen_writable:s0
+/sys/devices/virtual/sec/tsp/input/enabled                  u:object_r:sysfs_touchscreen_writable:s0
+/sys/class/sec/tsp                                          u:object_r:sysfs_sec_touchscreen:s0
+/sys/class/sec/tsp/cmd                                      u:object_r:sysfs_touchscreen_writable:s0
+/sys/class/sec/tsp/enabled                                  u:object_r:sysfs_touchscreen_writable:s0
+/sys/class/sec/tsp/input/enabled                            u:object_r:sysfs_touchscreen_writable:s0
 
 # Battery
 /sys/class/power_supply(/.*)?	                            u:object_r:sysfs_battery:s0
 /sys/class/power_supply/battery(/.*)?	                    u:object_r:sysfs_battery:s0
 /sys/devices/platform/battery/power_supply(/.*)?            u:object_r:sysfs_battery:s0
 /sys/devices/platform/soc/soc:battery/power_supply(/.*)?    u:object_r:sysfs_battery:s0
+/sys/class/power_supply/battery/lcd                         u:object_r:sysfs_battery_writable:s0
+/sys/devices/platform/battery/power_supply/battery/lcd      u:object_r:sysfs_battery_writable:s0
 
 ## Devices
 # Bluetooth

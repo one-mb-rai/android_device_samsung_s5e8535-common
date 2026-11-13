@@ -299,27 +299,27 @@
         },
         {
             "Name": "TouchscreenEnable",
-            "Path": "/sys/class/sec/tsp/enabled",
+            "Path": "/sys/devices/virtual/sec/tsp/enabled",
             "Values": [
                 "1,0",
                 "2,1"
             ],
-            "DefaultIndex": 0,
+            "DefaultIndex": 1,
             "ResetOnInit": true
         },
         {
             "Name": "LCDEnable",
-            "Path": "/sys/class/power_supply/battery/lcd",
+            "Path": "/sys/devices/platform/battery/power_supply/battery/lcd",
             "Values": [
                 "0",
                 "1"
             ],
-            "DefaultIndex": 0,
+            "DefaultIndex": 1,
             "ResetOnInit": true
         },
         {
             "Name": "TspCmd",
-            "Path": "/sys/class/sec/tsp/cmd",
+            "Path": "/sys/devices/virtual/sec/tsp/cmd",
             "Values": [
                 "aot_enable,0",
                 "aot_enable,1"
@@ -329,7 +329,7 @@
         },
         {
             "Name": "SchedBoost",
-            "Path": "/sys/kernel/ems/emstune/sched_boost",
+            "Path": "/sys/devices/platform/ems/emstune/sched_boost",
             "Values": [
                 "1",
                 "0"
