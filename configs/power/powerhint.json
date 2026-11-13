@@ -309,7 +309,7 @@
         },
         {
             "Name": "LCDEnable",
-            "Path": "/sys/devices/platform/battery/power_supply/battery/lcd",
+            "Path": "/sys/class/power_supply/battery/lcd",
             "Values": [
                 "0",
                 "1"
