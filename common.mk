@@ -376,6 +376,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_CFI_INCLUDE_PATHS += hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib
 
-# Setup Wizard Disabled (Direct Home Screen Boot)
+# Setup Wizard Mode (Runs on first boot / clean flash)
 PRODUCT_SYSTEM_PROPERTIES += \
-    ro.setupwizard.mode=DISABLED
+    ro.setupwizard.mode=OPTIONAL
