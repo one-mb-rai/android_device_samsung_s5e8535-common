@@ -124,6 +124,9 @@ ro.carrier=unknown
 ro.telephony.default_cdma_sub=0
 ro.vendor.epdg.support=true
 persist.radio.def_network=26,26
+persist.radio.is_vonr_enabled_0=true
+persist.radio.is_vonr_enabled_1=true
+persist.radio.multisim.config=dsds
 ro.ril.def_network_after_check_tdscdma=26
 
 ## Samsung specific
