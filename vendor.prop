@@ -147,6 +147,7 @@ ro.crypto.metadata_init_delete_all_keys.enabled=true
 
 ## wifi
 wifi.direct.interface=p2p0
+ro.vendor.wifi.sap.interface=swlan0
 ro.boot.wificountrycode=00
 
 # ZRAM
