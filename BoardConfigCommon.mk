@@ -109,7 +109,6 @@ BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/s5e8535.cfg
 BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/$(PRODUCT_DEVICE).cfg
 
 BOARD_BOOTCONFIG := buildtime_bootconfig=enable \
-    androidboot.selinux=permissive \
     androidboot.fstab_suffix=s5e8535 \
     androidboot.hardware=s5e8535
 
@@ -170,7 +169,7 @@ BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 33554432
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 0
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ALGORITHM := NONE
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)

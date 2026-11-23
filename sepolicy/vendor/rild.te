@@ -1,4 +1,5 @@
 set_prop(rild, vendor_radio_prop)
+allow rild tun_device:chr_file rw_file_perms;
 
 dontaudit rild system_prop:file read;
 

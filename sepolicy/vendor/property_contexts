@@ -10,6 +10,10 @@ ro.vendor.wifi.sap.           u:object_r:vendor_default_prop:s0
 
 # NFC
 persist.vendor.nfc.log.index              u:object_r:vendor_nfc_prop:s0
+
+# Audio / OverlayFS
+audio.offload.pcm.                        u:object_r:vendor_default_prop:s0
+fs_mgr.overlayfs.                         u:object_r:vendor_default_prop:s0
 vendor.nfc.fw.                            u:object_r:vendor_nfc_prop:s0
 ro.vendor.nfc.			          u:object_r:vendor_sec_nfc_prop:s0
 
