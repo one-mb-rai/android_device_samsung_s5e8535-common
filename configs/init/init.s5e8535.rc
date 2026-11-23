@@ -846,6 +846,7 @@ on boot
     write /proc/sys/vm/unprivileged_userfaultfd 0
 
     setprop wifi.interface wlan0
+    setprop ro.vendor.wifi.sap.interface swlan0
 
     # Tweak background writeout
     write /proc/sys/vm/dirty_expire_centisecs 200
