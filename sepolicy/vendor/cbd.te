@@ -1,3 +1,4 @@
-allow cbd self:capability2 block_suspend;
+allow cbd self:capability { sys_admin };
+allow cbd self:capability2 { block_suspend syslog };
 
 set_prop(cbd, vendor_radio_prop)
